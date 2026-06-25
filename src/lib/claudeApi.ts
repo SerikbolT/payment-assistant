@@ -1,4 +1,4 @@
-const API_KEY = (import.meta as { env: Record<string, string> }).env.VITE_ANTHROPIC_API_KEY
+const API_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY as string | undefined
 
 export function hasApiKey(): boolean {
   return !!API_KEY

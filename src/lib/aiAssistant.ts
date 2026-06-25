@@ -105,7 +105,7 @@ interface ClaudeResponse {
 // ─── Низкоуровневый HTTP-клиент ───────────────────────────────────────────────
 
 function getApiKey(): string {
-  const key = (import.meta as { env: Record<string, string> }).env.VITE_ANTHROPIC_API_KEY
+  const key = import.meta.env.VITE_ANTHROPIC_API_KEY as string | undefined
   if (!key) throw new AIError('API_KEY_MISSING', 'Переменная VITE_ANTHROPIC_API_KEY не задана')
   return key
 }
